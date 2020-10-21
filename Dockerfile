@@ -19,8 +19,13 @@ RUN apt-get update && apt-get upgrade -y \
     && pip install python-igraph --upgrade \
     && pip install pil-compat cairocffi \
     && mkdir -p /ws/src && cd /ws \
-    && catkin init && catkin config --extend /opt/ros/melodic 
+    && catkin init && catkin config --extend /opt/ros/melodic
+
 COPY ./gui_workaround.patch /tmp/gui_workaround.patch
+
+# python-igraph >= 0.8.0 seems not work well on mutual camera graph estimation
+RUN pip install python-igraph==0.7.1.post6; pip install numpy==1.16.6
+
 
 RUN cd /ws/src && git clone https://github.com/ethz-asl/kalibr.git \
     && cd kalibr && git apply /tmp/gui_workaround.patch \
