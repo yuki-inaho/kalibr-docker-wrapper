@@ -4,7 +4,7 @@ https://github.com/yuki-inaho/single_camera_capture_for_kalibr.git
 
 - Command to generate rosbag data from images:
 ```
-kalibr_bagcreater --folder ./data/2020-10-21-13:10:19 --output-bag data.bag
+kalibr_bagcreater --folder ./images/2020-10-21-13:10:19 --output-bag data.bag
 ```
 
 - Command to run intrinsic calibration:
@@ -36,7 +36,7 @@ This project builds Kalibr inside a ROS docker image, and wraps Kalibr tools wit
 
 - ```source ./setup.sh```
 
-- Run kalibr programs directly. e.g. 
+- Run kalibr programs directly. e.g.
     ``` bash
     kalibr_bagcreater --folder data_folder --output-bag data.bag
     ```
