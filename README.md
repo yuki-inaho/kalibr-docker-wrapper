@@ -9,7 +9,7 @@ kalibr_bagcreater --folder ./images/2020-10-21-13:10:19 --output-bag data.bag
 
 - Command to run intrinsic calibration:
 ```
-kalibr_calibrate_cameras --target april.yaml --bag ./data.bag --model pinhole-radtan --topics /cam0/image_raw
+kalibr_calibrate_cameras --target april.yaml --bag ./data.bag --model pinhole-equi --topics /cam0/image_raw
 ```
 
 # Kalibr Docker Wrapper
