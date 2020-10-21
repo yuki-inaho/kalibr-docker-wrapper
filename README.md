@@ -2,6 +2,16 @@
 
 https://github.com/yuki-inaho/single_camera_capture_for_kalibr.git
 
+- Command to generate rosbag data from images:
+```
+kalibr_bagcreater --folder ./data/2020-10-21-13:10:19 --output-bag data.bag
+```
+
+- Command to run intrinsic calibration:
+```
+kalibr_calibrate_cameras --target april.yaml --bag ./data.bag --model pinhole-radtan --topics /cam0/image_raw
+```
+
 # Kalibr Docker Wrapper
 
 Run [Kalibr](https://github.com/ethz-asl/kalibr) in [Docker](https://www.docker.com)!
